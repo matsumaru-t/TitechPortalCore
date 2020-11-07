@@ -8,8 +8,8 @@
 import Foundation
 
 struct MyData {
-    static let usrName = "00B00000"
-    static let usrPassword = "000000000000"
+    static let name = "00B00000"
+    static let password = "000000000000"
     
     static let matrixKey = "ABCDEFGHIJ".flatMap { alpha in
         "1234567".map { num in "\(alpha)\(num)" }

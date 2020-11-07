@@ -8,6 +8,10 @@
 import Foundation
 import TitechPortalCore
 
-TitechPortalLoginScrapingTask.login()
+TitechPortalLoginScrapingTask.login(
+    name: MyData.name,
+    password: MyData.password,
+    matrix: MyData.matrix
+)
 
 dispatchMain()

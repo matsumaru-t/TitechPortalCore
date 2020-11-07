@@ -8,7 +8,7 @@
 import Foundation
 
 public struct TitechPortalLoginScrapingTask {
-    public static func login() {
+    public static func login(name: String, password: String, matrix: [String:String]) {
         print("login")
         let loginURL = URL(string: "https://portal.nap.gsic.titech.ac.jp/GetAccess/Login?Template=userpass_key&AUTHMETHOD=UserPassword")!
         let postURL = URL(string: "https://portal.nap.gsic.titech.ac.jp/GetAccess/Login")!
@@ -21,9 +21,9 @@ public struct TitechPortalLoginScrapingTask {
                     
                     switch $0.name {
                     case "usr_name":
-                        value = MyData.usrName
+                        value = name
                     case "usr_password":
-                        value = MyData.usrPassword
+                        value = password
                     default:
                         value = $0.value
                     }
@@ -45,11 +45,11 @@ public struct TitechPortalLoginScrapingTask {
 
                         switch $0.name {
                         case "message3":
-                            value = MyData.matrix[keys[0]] ?? ""
+                            value = matrix[keys[0]] ?? ""
                         case "message4":
-                            value = MyData.matrix[keys[1]] ?? ""
+                            value = matrix[keys[1]] ?? ""
                         case "message5":
-                            value = MyData.matrix[keys[2]] ?? ""
+                            value = matrix[keys[2]] ?? ""
                         default:
                             value = $0.value
                         }
